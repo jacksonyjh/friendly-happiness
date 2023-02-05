@@ -9,6 +9,7 @@ host = 'https://app.sportdataapi.com/api/v1/soccer'
 class SoccerStats:
   def __init__(self, country):
     self.country = country
+    
   def getCountries(self, continent):
     response = requests.get(host + '/countries', headers=headers, params={'continent': continent})
     return json.loads(response.text)
